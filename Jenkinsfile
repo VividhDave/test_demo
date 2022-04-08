@@ -24,7 +24,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven3.8') {
-                    bat 'mvn deploy'
+                    bat 'mvn clean install -DskipTests'
                 }
             }
         }
